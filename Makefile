@@ -20,19 +20,18 @@ RELSTAGEDIR := /tmp/$(STAMP)
 
 all: sdc-scripts
 
-# want to grab
-
 .PHONY: release
-release: all $(SMF_MANIFESTS)
+release: all
 	@echo "Building $(RELEASE_TARBALL)"
 	@mkdir -p $(RELSTAGEDIR)/root/opt/smartdc/boot
-	cp -r $(ROOT)/deps/sdc-scripts/*
+	cp -r $(ROOT)/deps/sdc-scripts/* \
 		$(RELSTAGEDIR)/root/opt/smartdc/boot
 	cp -r $(ROOT)/boot \
 		$(RELSTAGEDIR)/root/opt/smartdc/boot
 	@mkdir -p $(RELSTAGEDIR)/root/opt/smartdc/zk
 	cp -r $(ROOT)/zookeeper-base/sapi_manifests \
 		$(RELSTAGEDIR)/root/opt/smartdc/zk
+	@rm -rf $(RELSTAGEDIR)
 
 .PHONY: publish
 publish: release
