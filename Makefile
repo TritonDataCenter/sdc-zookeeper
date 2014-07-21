@@ -11,7 +11,6 @@ RELEASE_TARBALL=$(NAME)-pkg-$(STAMP).tar.bz2
 ROOT := $(shell pwd)
 RELSTAGEDIR := /tmp/$(STAMP)
 
-
 #
 # Targets
 #
@@ -31,6 +30,7 @@ release: all
 	@mkdir -p $(RELSTAGEDIR)/root/opt/smartdc/zk
 	cp -r $(ROOT)/zookeeper-base/sapi_manifests \
 		$(RELSTAGEDIR)/root/opt/smartdc/zk
+	(cd $(RELSTAGEDIR) && $(TAR) -jcf $(ROOT)/$(RELEASE_TARBALL) root)
 	@rm -rf $(RELSTAGEDIR)
 
 .PHONY: publish
