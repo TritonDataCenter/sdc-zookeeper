@@ -39,8 +39,8 @@ publish: release
 		@echo "error: 'BITS_DIR' must be set for 'publish' target"; \
 		exit 1; \
 	fi
-	mkdir -p $(BITS_DIR)/binder
-	cp $(ROOT)/$(RELEASE_TARBALL) $(BITS_DIR)/binder/$(RELEASE_TARBALL)
+	mkdir -p $(BITS_DIR)/$(NAME)
+	cp $(ROOT)/$(RELEASE_TARBALL) $(BITS_DIR)/$(NAME)/$(RELEASE_TARBALL)
 
 
 include ./tools/mk/Makefile.deps
