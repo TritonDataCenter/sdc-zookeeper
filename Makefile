@@ -45,9 +45,6 @@ publish: release
 
 
 include ./tools/mk/Makefile.deps
-include ./tools/mk/Makefile.node_prebuilt.targ
-include ./tools/mk/Makefile.node_deps.targ
-include ./tools/mk/Makefile.smf.targ
 include ./tools/mk/Makefile.targ
 
 sdc-scripts: deps/sdc-scripts/.git
