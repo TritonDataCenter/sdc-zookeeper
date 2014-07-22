@@ -4,9 +4,12 @@
 
 NAME=sdc-zookeeper
 
-include ./tools/mk/Makefile.defs
+# Files
+SMF_MANIFESTS_IN=smf/manifests/zookeeper.xml.in
 
-TAR=tar
+include ./tools/mk/Makefile.defs
+include ./tools/mk/Makefile.smf.defs
+
 RELEASE_TARBALL=$(NAME)-pkg-$(STAMP).tar.bz2
 ROOT := $(shell pwd)
 RELSTAGEDIR := /tmp/$(STAMP)
@@ -25,10 +28,14 @@ release: all
 	@mkdir -p $(RELSTAGEDIR)/root/opt/smartdc/boot
 	cp -r $(ROOT)/deps/sdc-scripts/* \
 		$(RELSTAGEDIR)/root/opt/smartdc/boot
-	cp -r $(ROOT)/boot \
+	cp -r $(ROOT)/zookeeper-base/boot/* \
 		$(RELSTAGEDIR)/root/opt/smartdc/boot
-	@mkdir -p $(RELSTAGEDIR)/root/opt/smartdc/zk
+	cp -r $(ROOT)/boot/* \
+		$(RELSTAGEDIR)/root/opt/smartdc/boot
+	@mkdir -p $(RELSTAGEDIR)/root/opt/smartdc/zookeeper
 	cp -r $(ROOT)/zookeeper-base/sapi_manifests \
+		$(RELSTAGEDIR)/root/opt/smartdc/zk
+	cp -r $(ROOT)/zookeeper-base/smf \
 		$(RELSTAGEDIR)/root/opt/smartdc/zk
 	(cd $(RELSTAGEDIR) && $(TAR) -jcf $(ROOT)/$(RELEASE_TARBALL) root)
 	@rm -rf $(RELSTAGEDIR)
@@ -44,6 +51,7 @@ publish: release
 
 
 include ./tools/mk/Makefile.deps
+include ./tools/mk/Makefile.smf.targ
 include ./tools/mk/Makefile.targ
 
 sdc-scripts: deps/sdc-scripts/.git
