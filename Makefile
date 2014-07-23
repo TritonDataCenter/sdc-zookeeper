@@ -5,7 +5,7 @@
 NAME=sdc-zookeeper
 
 # Files
-SMF_MANIFESTS_IN=smf/manifests/zookeeper.xml.in
+SMF_MANIFESTS_IN=zookeeper-base/smf/manifests/zookeeper.xml.in
 
 include ./tools/mk/Makefile.defs
 include ./tools/mk/Makefile.smf.defs
@@ -20,7 +20,7 @@ RELSTAGEDIR := /tmp/$(STAMP)
 
 .PHONY: all
 
-all: sdc-scripts
+all: $(SMF_MANIFESTS) | sdc-scripts
 
 .PHONY: release
 release: all
@@ -34,9 +34,9 @@ release: all
 		$(RELSTAGEDIR)/root/opt/smartdc/boot
 	@mkdir -p $(RELSTAGEDIR)/root/opt/smartdc/zookeeper
 	cp -r $(ROOT)/zookeeper-base/sapi_manifests \
-		$(RELSTAGEDIR)/root/opt/smartdc/zk
+		$(RELSTAGEDIR)/root/opt/smartdc/zookeeper
 	cp -r $(ROOT)/zookeeper-base/smf \
-		$(RELSTAGEDIR)/root/opt/smartdc/zk
+		$(RELSTAGEDIR)/root/opt/smartdc/zookeeper
 	(cd $(RELSTAGEDIR) && $(TAR) -jcf $(ROOT)/$(RELEASE_TARBALL) root)
 	@rm -rf $(RELSTAGEDIR)
 
