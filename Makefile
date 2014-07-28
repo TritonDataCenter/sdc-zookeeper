@@ -28,14 +28,14 @@ release: all
 	@mkdir -p $(RELSTAGEDIR)/root/opt/smartdc/boot
 	cp -r $(ROOT)/deps/sdc-scripts/* \
 		$(RELSTAGEDIR)/root/opt/smartdc/boot
-	cp -r $(ROOT)/zookeeper-base/boot/* \
+	cp -r $(ROOT)/deps/zookeeper-base/boot/* \
 		$(RELSTAGEDIR)/root/opt/smartdc/boot
 	cp -r $(ROOT)/boot/* \
 		$(RELSTAGEDIR)/root/opt/smartdc/boot
 	@mkdir -p $(RELSTAGEDIR)/root/opt/smartdc/zookeeper
-	cp -r $(ROOT)/zookeeper-base/sapi_manifests \
+	cp -r $(ROOT)/deps/zookeeper-base/sapi_manifests \
 		$(RELSTAGEDIR)/root/opt/smartdc/zookeeper
-	cp -r $(ROOT)/zookeeper-base/smf \
+	cp -r $(ROOT)/deps/zookeeper-base/smf \
 		$(RELSTAGEDIR)/root/opt/smartdc/zookeeper
 	(cd $(RELSTAGEDIR) && $(TAR) -jcf $(ROOT)/$(RELEASE_TARBALL) root)
 	@rm -rf $(RELSTAGEDIR)
