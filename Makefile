@@ -5,7 +5,7 @@
 NAME=sdc-zookeeper
 
 # Files
-SMF_MANIFESTS_IN=zookeeper-base/smf/manifests/zookeeper.xml.in
+SMF_MANIFESTS_IN=deps/zookeeper-base/smf/manifests/zookeeper.xml.in
 
 include ./tools/mk/Makefile.defs
 include ./tools/mk/Makefile.smf.defs
