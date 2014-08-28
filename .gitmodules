@@ -4,3 +4,6 @@
 [submodule "zookeeper-base"]
 	path = deps/zookeeper-base
 	url = git@git.joyent.com:zookeeper-base.git
+[submodule "deps/zookeeper-common"]
+	path = deps/zookeeper-common
+	url = git@github.com:joyent/zookeeper-common.git
