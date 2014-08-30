@@ -1,9 +1,6 @@
 [submodule "deps/sdc-scripts"]
 	path = deps/sdc-scripts
-	url = git@git.joyent.com:sdc-scripts.git
-[submodule "zookeeper-base"]
-	path = deps/zookeeper-base
-	url = git@git.joyent.com:zookeeper-base.git
+	url = git@github.com:joyent/sdc-scripts.git
 [submodule "deps/zookeeper-common"]
 	path = deps/zookeeper-common
 	url = git@github.com:joyent/zookeeper-common.git
