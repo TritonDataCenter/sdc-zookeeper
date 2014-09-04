@@ -10,12 +10,11 @@
 
 # sdc-zookeeper
 
-Repository: <git@git.joyent.com:sdc-zookeeper.git>
-Who: Matt Smillie
-Tickets/bugs: <https://devhub.joyent.com/jira/browse/HEAD>
+This repository is part of the Joyent SmartDataCenter project (SDC).  For
+contribution guidelines, issues, and general documentation, visit the main
+[SDC](http://github.com/joyent/sdc) project page.
 
 # Overview
 
 This repo contains the setup and configuration for the SDC zookeeper *zone*.
-Zookeeper itself is delivered via the zookeeper-base submodule.
-
+Zookeeper itself is delivered via the zookeeper-common submodule.
