@@ -28,6 +28,9 @@ RELSTAGEDIR := /tmp/$(STAMP)
 
 all: $(SMF_MANIFESTS) | sdc-scripts
 
+# Needed for 'check-manifests' target.
+check:: deps/zookeeper-common/.git
+
 .PHONY: release
 release: all
 	@echo "Building $(RELEASE_TARBALL)"
