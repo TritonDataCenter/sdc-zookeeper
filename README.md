@@ -14,6 +14,12 @@ This repository is part of the Joyent SmartDataCenter project (SDC).  For
 contribution guidelines, issues, and general documentation, visit the main
 [SDC](http://github.com/joyent/sdc) project page.
 
+# DEPRECATED
+
+This repo is now deprecated. SDC no longer uses the separate "zookeeper"
+core zones. Instead SDC's zk is used from the "binder" zones. See
+sdc-binder.git.
+
 # Overview
 
 This repo contains the setup and configuration for the SDC zookeeper *zone*.
