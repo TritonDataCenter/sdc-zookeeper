@@ -18,7 +18,7 @@ contribution guidelines, issues, and general documentation, visit the main
 
 This repo is now deprecated. SDC no longer uses the separate "zookeeper"
 core zones. Instead SDC's zk is used from the "binder" zones. See
-sdc-binder.git.
+[binder.git](http://github.com/joyent/binder).
 
 # Overview
 
